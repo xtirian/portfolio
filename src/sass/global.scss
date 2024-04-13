@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'space-grotesk';
+  src: url('../assets/font/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
+}
+
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'space-grotesk', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style-type: none;
+}
