@@ -26,3 +26,16 @@
   font-size: $font-size-body;
   line-height: $lh-body;
 }
+
+
+@mixin Container-Mobile {
+  max-width: $max-container-mobile;
+  width: $container-mobile;
+  margin: 0 auto;
+}
+
+@mixin tablet {
+  @media screen and (max-width: $break-view-tablet) {
+    @content;
+  }
+}

@@ -16,4 +16,18 @@ $lh-m: 32px;
 $font-size-body: 18px;
 $lh-body: 28px;
 
+// BREAK VIEW SIZE
+$break-view-desktop: 1440px;
+$break-view-notebook: 1024px;
+$break-view-tablet: 768px;
+$break-view-mobile: 375px;
 
+// SIZE CONTAINER
+$container-desktop: 76.388888889%;
+$container-tablet: 82.1875%;
+$container-mobile: 91.46666666%;
+
+// MAX SIZE CONTAINER
+$max-container-desktop: 1440px;
+$max-container-tablet: 1024px;
+$max-container-mobile: 708px;
