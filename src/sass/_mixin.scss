@@ -1,0 +1,28 @@
+@use './var' as *;
+
+
+// TYPOGRAPHY
+@mixin HeadingXL {
+  font-size: $font-size-xl;
+  font-weight: bold;
+  line-height: $lh-xl;
+  letter-spacing: -2.5px;
+}
+
+@mixin HeadingL {
+  font-size: $font-size-l;
+  font-weight: bold;
+  line-height: $lh-l;
+  letter-spacing: -1.5px;
+}
+
+@mixin HeadingM {
+  font-size: $font-size-m;
+  font-weight: bold;
+  line-height: $lh-m;
+}
+
+@mixin Body {
+  font-size: $font-size-body;
+  line-height: $lh-body;
+}
