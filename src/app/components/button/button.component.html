@@ -1,0 +1,11 @@
+<ng-template [ngIf]="link">
+  <a [href]="link" target="_blank" class="button">
+    {{ buttonText }}
+  </a>
+
+</ng-template>
+<ng-template [ngIf]="!link">
+  <button class="button">
+    CONTACT ME
+  </button>
+</ng-template>

@@ -1,0 +1,20 @@
+@use "../../../assets/sass/var" as *;
+@use "../../../assets/sass/mixin" as mix;
+
+.button {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 26px;
+
+  color: $white;
+  background-color: transparent;
+  border-bottom: 2px solid $green;
+  margin-top: 24px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $green;
+    border-bottom: 2px solid $green;
+  }
+}
