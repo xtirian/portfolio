@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { ScrollService } from '../../services/scroll.service';
+import { ScrollService } from '../../services/scrollService/scroll.service';
 
 @Component({
   selector: 'app-button',
