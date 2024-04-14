@@ -1,0 +1,24 @@
+@use '../../../assets/sass/mixin' as mix;
+@use '../../../assets/sass/var' as *;
+
+
+.stack-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stack-card-title{
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  color: $white;
+}
+
+.stack-card-time{
+  color: $grey;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 500;
+}

@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-stack',
+  selector: 'app-stack-card',
   standalone: true,
   imports: [],
   templateUrl: './stack.component.html',
-  styleUrl: './stack.component.scss'
+  styleUrl: './stack.component.scss',
 })
-export class StackComponent {
-
+export class StackCardComponent {
+  @Input() title = '';
+  @Input() timeExperience = '';
 }

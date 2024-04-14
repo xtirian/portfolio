@@ -1,0 +1,19 @@
+@use "../../../assets/sass/mixin" as mix;
+@use "../../../assets/sass/var" as *;
+
+.stack-sect {
+  width: 100%;
+
+  .stack-container {
+    @include mix.Container-Mobile;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    margin: 80px auto;
+    padding: 40px 0;
+    border-top: 1px solid $white;
+    border-bottom: 1px solid $white;
+  }
+}

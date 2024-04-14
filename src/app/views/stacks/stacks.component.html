@@ -1,1 +1,7 @@
-<p>stacks works!</p>
+<section class="stack-sect">
+  <div class="stack-container">
+    @for (card of cards; track card){
+      <app-stack-card [title]="card.cardText" [timeExperience]="card.cardExperience" />
+    }
+  </div>
+</section>

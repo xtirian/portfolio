@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StackComponent } from './stack.component';
+import { StackCardComponent } from './stack.component';
 
-describe('StackComponent', () => {
-  let component: StackComponent;
-  let fixture: ComponentFixture<StackComponent>;
+describe('StackCardComponent', () => {
+  let component: StackCardComponent;
+  let fixture: ComponentFixture<StackCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StackComponent]
+      imports: [StackCardComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(StackComponent);
+
+    fixture = TestBed.createComponent(StackCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
