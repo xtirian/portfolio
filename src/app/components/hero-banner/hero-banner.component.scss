@@ -1,10 +1,10 @@
-@use '../../../assets/sass/var' as *;
-@use '../../../assets/sass/mixin' as mix;
+@use "../../../assets/sass/var" as *;
+@use "../../../assets/sass/mixin" as mix;
 
-.heroBanner-section{
+.heroBanner-section {
   width: 100%;
 
-  .heroBanner-container{
+  .heroBanner-container {
     @include mix.Container-Mobile;
     display: flex;
     flex-direction: column;
@@ -12,23 +12,21 @@
     align-items: center;
   }
 
-  .heroBanner-content{
+  .heroBanner-content {
     text-align: center;
     margin-top: 2rem;
 
-    .heroBanner-title{
+    .heroBanner-title {
       font-size: 40px;
       font-weight: bold;
       line-height: 40px;
       color: $white;
-      span{
+      span {
         text-decoration: underline $green 4px solid;
-
-
       }
     }
 
-    .heroBanner-subtitle{
+    .heroBanner-subtitle {
       font-size: 16px;
       line-height: 26px;
       font-weight: 500;
@@ -37,13 +35,13 @@
       color: $grey;
     }
 
-    .heroBanner-button{
+    .heroBanner-button {
       margin-top: 2rem;
     }
   }
 }
 
-.heroBanner-pattern1{
+.heroBanner-pattern1 {
   width: 129px;
   height: 129px;
 
@@ -51,7 +49,7 @@
   right: -81px;
 }
 
-.heroBanner-pattern2{
+.heroBanner-pattern2 {
   width: 530px;
   height: 129px;
 
