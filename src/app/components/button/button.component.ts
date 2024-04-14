@@ -22,7 +22,4 @@ export class ButtonComponent {
       scrollToElement.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest'});
     }
   }
-
-
 }
-
