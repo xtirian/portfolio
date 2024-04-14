@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
+import { HeroBannerComponent } from './components/hero-banner/hero-banner.component';
 
-const sharedComponents = [HeaderComponent];
+const sharedComponents = [HeaderComponent, HeroBannerComponent];
 
 @Component({
   selector: 'app-root',
