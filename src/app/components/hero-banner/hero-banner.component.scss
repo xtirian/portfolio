@@ -1,0 +1,39 @@
+@use '../../../assets/sass/var' as *;
+@use '../../../assets/sass/mixin' as mix;
+
+.heroBanner-section{
+  width: 100%;
+
+  .heroBanner-container{
+    @include mix.Container-Mobile;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heroBanner-content{
+    text-align: center;
+    margin-top: 2rem;
+
+    .heroBanner-title{
+      font-size: 40px;
+      font-weight: bold;
+      line-height: 1;
+      color: $white;
+    }
+
+    .heroBanner-subtitle{
+      font-size: 16px;
+      line-height: 26px;
+      font-weight: 500;
+      margin: 24px 0;
+
+      color: $grey;
+    }
+
+    .heroBanner-button{
+      margin-top: 2rem;
+    }
+  }
+}

@@ -1,1 +1,14 @@
-<p>hero-banner works!</p>
+<section class="heroBanner-section">
+  <div class="heroBanner-container">
+    <img [src]="heroBannerSrc" alt="hero" />
+    <div class="heroBanner-content">
+      <h1 class="heroBanner-title">Nice to meet you! <br>
+      I'm <span>Matheus Fernandes</span></h1>
+      <p class="heroBanner-subtitle">
+        Based in BR, I'm full-stack developer with a passion for building beautiful and functional websites.
+      </p>
+      <!-- chamar botão aqui -->
+      <app-button [buttonText]="buttonText" [link]="buttonLink" />
+    </div>
+  </div>
+</section>
