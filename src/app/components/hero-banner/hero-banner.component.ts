@@ -12,6 +12,10 @@ import { ScreenSizeService } from '../../services/screenSize/screen-size.service
 })
 export class HeroBannerComponent {
   heroBannerSrc = '';
+  pattern1Src = 'assets/images/bg/pattern-circle.svg';
+  pattern2Src = 'assets/images/bg/pattern-rings.svg';
+
+
   buttonText = "Contact Me";
   buttonLink = null;
 
