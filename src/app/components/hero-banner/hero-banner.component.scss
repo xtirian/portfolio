@@ -19,8 +19,13 @@
     .heroBanner-title{
       font-size: 40px;
       font-weight: bold;
-      line-height: 1;
+      line-height: 40px;
       color: $white;
+      span{
+        text-decoration: underline $green 4px solid;
+
+
+      }
     }
 
     .heroBanner-subtitle{
