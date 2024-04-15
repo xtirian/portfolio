@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { IProjectProps } from '../../../assets/libs/models/IProject.model';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [],
+  imports: [ButtonComponent],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })
@@ -17,5 +18,7 @@ export class CardComponent {
     link: '',
     github: '',
   };
+
+  ViewProjectLabel = 'View Project';
 }
 
