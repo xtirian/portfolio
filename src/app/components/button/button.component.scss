@@ -12,9 +12,14 @@
   margin-top: 24px;
   padding-bottom: 10px;
   text-transform: uppercase;
+  transform: translate(-50% -50%);
 
   &:hover {
     color: $green;
     border-bottom: 2px solid $green;
   }
+}
+
+.link {
+  margin-top: 0;
 }
