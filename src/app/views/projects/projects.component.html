@@ -1,11 +1,18 @@
 <section class="project-section">
   <div class="project-container ">
-    <header class="">
+    <header class="header-project">
       <h3 >
         Projects
        </h3>
        <app-button [buttonText]="buttonProps.buttonText" [link]="buttonProps.buttonLink" />
     </header>
+    <main class="main-project">
+      @for(project of projects; track project){
+        <app-card [project]="project" />
+      }
+    </main>
+
+
 
   </div>
 </section>
