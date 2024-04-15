@@ -1,1 +1,16 @@
-<p>card works!</p>
+<div class="project-card">
+  <img [src]="project.image" alt="project-card" class="project-card-image">
+  <div class="project-card-content">
+    <h4>{{project.title}}</h4>
+    <div class="project-tag_container">
+      @for (tag of project.tags; track tag) {
+      <span class="project-tag_content">{{tag}}</span>
+      }
+    </div>
+  </div>
+  <div class="project-card_footer">
+    <a href="{{project.link}}" target="_blank">View Project</a>
+    <a href="{{project.github}}" target="_blank">View Code</a>
+  </div>
+
+</div>

@@ -3,8 +3,9 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { HeroBannerComponent } from './components/hero-banner/hero-banner.component';
 import { StacksComponent } from './views/stacks/stacks.component';
+import { ProjectsComponent } from './views/projects/projects.component';
 
-const sharedComponents = [HeaderComponent, HeroBannerComponent, StacksComponent];
+const sharedComponents = [HeaderComponent, HeroBannerComponent, StacksComponent, ProjectsComponent];
 
 @Component({
   selector: 'app-root',
