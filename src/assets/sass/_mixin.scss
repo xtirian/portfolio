@@ -25,6 +25,7 @@
 @mixin Body {
   font-size: $font-size-body;
   line-height: $lh-body;
+  font-weight: 500;
 }
 
 
