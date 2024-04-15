@@ -120,7 +120,21 @@ export class HeroBannerComponent {
 }
 ```
 
+6. **Passing props from a parent to a child**: In the case of this project, I was taking the data in the Project view and passing for Project Card, and taking the link from the card to pass to the button, so I had a chain of information passing bellow. The first case
+```html
+<!-- PROJECT VIEW -->
+<app-card [project]="project" />
+```
+```html
+<!-- PROJECT CARD -->
+  <footer class="project-card_footer">    
+    <app-button link="{{project.link}}" buttonText="View Project" />
+  </footer>
+```
+in the case I didn't need to to encapsulate the link as `[link]={{project.link}}`, because the link is a property already defined in the button, not in the Card.
+
 ### continued development
+1. **Create a API to store my projects**: The idea is create a API to store my projects, classify it with categories to use in this portfolio
 
 ## Author
 
