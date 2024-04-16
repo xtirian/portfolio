@@ -7,12 +7,13 @@
 
 .main-footer-container {
   @include mix.Container-Mobile;
+  margin-top: 80px;
   padding: 60px 0;
 
   h3 {
     color: $white;
 
-    //HEADINGM
+    // HEADINGM
     font-size: 40px;
     line-height: 40px;
     font-weight: 700;

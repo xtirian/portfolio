@@ -1,15 +1,25 @@
-<form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-  <label for="name" class="input_container" [ngClass]="contactForm.get('name')?.touched ? (contactForm.get('name')?.errors?.['required'] || contactForm.get('name')?.errors?.['minlength'] ? 'invalid' : 'valid') : ''" >
-    <input type="text" id="name" name="name" placeholder="NAME" class="form-control" formControlName="name">
-    <span *ngIf="contactForm.get('name')?.errors?.required && contactForm.get('name')?.touched" class="error_return">Sorry, this field is required</span>
-    <span *ngIf="contactForm.get('name')?.errors?.['minlength'] && contactForm.get('name')?.touched" class="error_return">Sorry, Min. Length is 3</span>
-    <mat-icon *ngIf="contactForm.get('name')?.touched && (contactForm.get('name')?.errors?.['required'] || contactForm.get('name')?.errors?.['minlength'])" aria-hidden="false" aria-label="Example home icon" fontIcon="error_outline" class="form-icons"></mat-icon>
-  </label>
-  <label for="email" class="input_container">
-    <input type="email" id="email" name="email" placeholder="EMAIL" class="form-control" formControlName="email">
-    <span *ngIf="contactForm.get('email')?.errors?.required && contactForm.get('email')?.touched">Sorry, this field is required</span>
-    <span *ngIf="contactForm.get('email')?.errors?.email && contactForm.get('email')?.touched">Sorry, invalid format here</span>
-    </label>
+<form id="form_contact" class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
-  <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+  <label for="name" class="input_container" [ngClass]="contactForm.get('name')?.touched ? (contactForm.get('name')?.errors?.['required'] || contactForm.get('name')?.errors?.['minlength'] ? 'invalid' : 'valid') : ''">
+    <input type="name" id="name" name="name" placeholder="NAME" formControlName="name">
+    <span class="error_return" *ngIf="contactForm.get('name')?.errors?.['required'] && contactForm.get('name')?.touched">Sorry, this field is required</span>
+    <span class="error_return" *ngIf="contactForm.get('name')?.errors?.['minlength'] && contactForm.get('name')?.touched">Sorry, this field require at least 3 characters</span>
+    <mat-icon class="form-icons" *ngIf="contactForm.get('name')?.errors && contactForm.get('name')?.touched" fontIcon="error_outlined" />
+  </label>
+
+  <label for="email" class="input_container" [ngClass]="contactForm.get('email')?.touched ? (contactForm.get('email')?.errors?.['required'] || contactForm.get('email')?.errors?.['email'] ? 'invalid' : 'valid') : ''">
+    <input type="email" id="email" name="email" placeholder="EMAIL" class="form-control" formControlName="email">
+    <span class="error_return" *ngIf="contactForm.get('email')?.errors?.required && contactForm.get('email')?.touched">Sorry, this field is required</span>
+    <span class="error_return" *ngIf="contactForm.get('email')?.errors?.email && contactForm.get('email')?.touched">Sorry, invalid format here</span>
+    <mat-icon class="form-icons" *ngIf="contactForm.get('email')?.errors && contactForm.get('email')?.touched" fontIcon="error_outlined" />
+  </label>
+
+  <label for="message" class="input_container" [ngClass]="contactForm.get('message')?.touched ? (contactForm.get('message')?.errors?.['required'] || contactForm.get('message')?.errors?.['minlength'] ? 'invalid' : 'valid') : ''">
+    <textarea id="message" name="message" placeholder="MESSAGE" class="form-control" formControlName="message" rows="3"> </textarea>
+    <span class="error_return" *ngIf="contactForm.get('message')?.errors?.required && contactForm.get('message')?.touched">Sorry, this field is required</span>
+    <span class="error_return" *ngIf="contactForm.get('message')?.errors?.['minlength'] && contactForm.get('message')?.touched">Sorry, this field require at least 10 characters</span>
+    <mat-icon class="form-icons" *ngIf="contactForm.get('message')?.errors && contactForm.get('message')?.touched" fontIcon="error_outlined" />
+  </label>
+
+  <button class="form_button" type="submit" [disabled]="!contactForm?.valid">Send Message</button>
 </form>

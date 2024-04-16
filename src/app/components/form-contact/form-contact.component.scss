@@ -1,11 +1,54 @@
-@use '../../../assets//sass/var' as *;
+@use "../../../assets//sass/var" as *;
 
-.form-icons, .error_return{
-  color: $error
+.contact-form {
+  padding: 50px 0 87px 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+
+}
+
+.form-icons,
+.error_return {
+  color: $error;
+  position: absolute;
+}
+.form-icons{
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.error_return{
+  bottom: 0;
+  right: 0;
+  transform: translateY(110%);
 }
 
 .input_container {
   border-bottom: 2px solid $white;
+  padding-bottom: 16px;
+  position: relative;
+
+  input, textarea {
+    background-color: transparent;
+    color: $grey;
+
+    width: 100%;
+    padding: 0  0 0 24px;
+    outline: none;
+
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: -0.22px;
+    font-weight: 500;
+
+    &:active {
+      color: $white
+    }
+  }
+
+
 }
 
 .input_container.valid {
@@ -15,3 +58,32 @@
   border-bottom: 2px solid $error;
 }
 
+.form_button {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 26px;
+
+  width: fit-content;
+  align-self: flex-end;
+
+  color: $white;
+  background-color: transparent;
+  border-bottom: 2px solid $green;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  transform: translate(-50% -50%);
+
+  &:enabled:hover {
+    color: $green;
+    border-bottom: 2px solid $green;
+  }
+  &:disabled {
+    opacity: 0.3;
+  }
+}
+
+.sucess_snack{
+  background-color: $green;
+  color: $white;
+
+}
