@@ -1,0 +1,17 @@
+@use '../../../assets//sass/var' as *;
+
+.form-icons, .error_return{
+  color: $error
+}
+
+.input_container {
+  border-bottom: 2px solid $white;
+}
+
+.input_container.valid {
+  border-bottom: 2px solid $green;
+}
+.input_container.invalid {
+  border-bottom: 2px solid $error;
+}
+

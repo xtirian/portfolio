@@ -1,0 +1,15 @@
+<form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <label for="name" class="input_container" [ngClass]="contactForm.get('name')?.touched ? (contactForm.get('name')?.errors?.['required'] || contactForm.get('name')?.errors?.['minlength'] ? 'invalid' : 'valid') : ''" >
+    <input type="text" id="name" name="name" placeholder="NAME" class="form-control" formControlName="name">
+    <span *ngIf="contactForm.get('name')?.errors?.required && contactForm.get('name')?.touched" class="error_return">Sorry, this field is required</span>
+    <span *ngIf="contactForm.get('name')?.errors?.['minlength'] && contactForm.get('name')?.touched" class="error_return">Sorry, Min. Length is 3</span>
+    <mat-icon *ngIf="contactForm.get('name')?.touched && (contactForm.get('name')?.errors?.['required'] || contactForm.get('name')?.errors?.['minlength'])" aria-hidden="false" aria-label="Example home icon" fontIcon="error_outline" class="form-icons"></mat-icon>
+  </label>
+  <label for="email" class="input_container">
+    <input type="email" id="email" name="email" placeholder="EMAIL" class="form-control" formControlName="email">
+    <span *ngIf="contactForm.get('email')?.errors?.required && contactForm.get('email')?.touched">Sorry, this field is required</span>
+    <span *ngIf="contactForm.get('email')?.errors?.email && contactForm.get('email')?.touched">Sorry, invalid format here</span>
+    </label>
+
+  <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+</form>
