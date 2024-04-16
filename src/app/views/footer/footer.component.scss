@@ -1,0 +1,36 @@
+@use "../../../assets/sass/mixin" as mix;
+@use "../../../assets/sass/var" as *;
+
+.main-footer {
+  background-color: $dark-grey;
+}
+
+.main-footer-container {
+  @include mix.Container-Mobile;
+  padding: 60px 0;
+
+  h3 {
+    color: $white;
+
+    //HEADINGM
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 700;
+    text-align: center;
+
+    letter-spacing: -1.14px;
+  }
+  p {
+    color: $grey;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 500;
+    text-align: center;
+  }
+}
+
+.main-footer-footer {
+  border-top: 1px solid $white;
+  padding-top: 20px;
+  // compensate for the padding of the header component
+}
