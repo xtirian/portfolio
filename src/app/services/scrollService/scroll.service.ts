@@ -4,13 +4,16 @@ import { ElementRef, Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ScrollService {
-  private scrollToElement!: ElementRef<HTMLElement>;
+  private scrollToElementId!: ElementRef<HTMLElement>;
 
-  setScrollToElement(element: ElementRef<HTMLElement>): void {
-    this.scrollToElement = element;
+  setScrollToElementId(element: string): void {
+    const elementRef = document.getElementById(element);
+    if (elementRef) {
+      this.scrollToElementId = new ElementRef(elementRef);
+    }
   }
 
-  getScrollToElement(): ElementRef<HTMLElement> {
-    return this.scrollToElement;
+  getScrollToElement(): ElementRef {
+    return this.scrollToElementId;
   }
 }

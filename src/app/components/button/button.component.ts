@@ -7,19 +7,26 @@ import { ScrollService } from '../../services/scrollService/scroll.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './button.component.html',
-  styleUrl: './button.component.scss'
+  styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
-
   @Input() buttonText: string = '';
   @Input() link: string | null = null;
+  @Input() elementRef: string | undefined;
 
-  constructor(private scrollService: ScrollService) { }
+  constructor(private scrollService: ScrollService) {}
 
-  ngOnInit():void {
-    const scrollToElement = this.scrollService.getScrollToElement();
-    if(scrollToElement) {
-      scrollToElement.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest'});
+  scrollToElement(): void {
+    if (!this.link && this.elementRef !== undefined) {
+      this.scrollService.setScrollToElementId(this.elementRef);
+      const scrollToElement = this.scrollService.getScrollToElement();
+      if (scrollToElement) {
+        scrollToElement.nativeElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest',
+        });
+      }
     }
   }
 }
