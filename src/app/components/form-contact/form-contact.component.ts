@@ -8,15 +8,25 @@ import {
 import { IContact } from '../../../assets/libs/models/IContact.model';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { catchError, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-form-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatIconModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    HttpClientModule,
+    MatSnackBarModule,
+  ],
   templateUrl: './form-contact.component.html',
   styleUrl: './form-contact.component.scss',
 })
 export class FormContactComponent {
+  endPointURL = 'https://formspree.io/f/mgejklpd';
   contactModel: IContact = {
     name: '',
     email: '',
@@ -24,10 +34,12 @@ export class FormContactComponent {
   };
   contactForm: any;
 
-  constructor() {}
+  constructor(
+    private http: HttpClient,
+    private _snackBar: MatSnackBar,
+  ) {}
 
   ngOnInit() {
-
     this.contactForm = new FormGroup({
       name: new FormControl(this.contactModel.name, [
         Validators.required,
@@ -43,16 +55,40 @@ export class FormContactComponent {
       ]),
     });
 
-
     console.log('isMarked', this.contactForm.get('name')?.value);
-
   }
 
   onSubmit() {
-    console.log(this.contactForm.value);
+    this.http
+      .post<IContact>(this.endPointURL, this.contactForm.value)
+      .pipe(
+        catchError((error: any) => {
+          this._snackBar.open('Could not send the message', '' ,{
+            duration: 3000,
+            direction: 'rtl',
+            panelClass: ['error-snack'],
+          });
+          console.error(error);
+          return throwError(error);
+        }),
+      )
+      .subscribe((response) => {
+        this._snackBar.open(
+          `Thank you for your message, ${this.contactForm?.value?.name}, I'll answer as soon as possible`,
+          'Close',
+          {
+            duration: 5000,
+            direction: 'rtl',
+            panelClass: ['sucess_snack'],
+            politeness: 'polite',
+            verticalPosition: 'top',
+            horizontalPosition: 'center',
+          },
+        );
+
+        this.contactForm.reset();
+      });
   }
-
-
 }
 
 /*
