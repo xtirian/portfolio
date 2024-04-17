@@ -22,3 +22,19 @@
   line-height: 26px;
   font-weight: 500;
 }
+
+@include mix.tablet {
+  .stack-card{
+    align-items: flex-start;
+    row-gap: 14px;
+
+    .stack-card-title{
+      @include mix.HeadingL
+    }
+
+    .stack-card-time{
+      @include mix.Body
+    }
+  }
+
+}

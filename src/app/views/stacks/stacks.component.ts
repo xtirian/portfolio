@@ -27,11 +27,7 @@ export class StacksComponent {
       cardExperience: '1'
     },
     {
-      cardText: 'SQL',
-      cardExperience: '1'
-    },
-    {
-      cardText: 'NoSQL',
+      cardText: 'SQL/NoSQL',
       cardExperience: '1'
     },
     {
