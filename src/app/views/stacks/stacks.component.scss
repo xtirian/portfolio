@@ -43,3 +43,19 @@
     }
   }
 }
+
+@include mix.desktop {
+  .stack-sect {
+    .stack-container {
+      @include mix.Container-Desktop;
+      margin: 219px auto 140px auto;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      padding: 72px 0 0 0;
+      row-gap: 58px;
+      gap: 35px;
+    }
+  }
+}
