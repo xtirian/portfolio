@@ -43,8 +43,21 @@
   margin: 0 auto;
 }
 
+@mixin Container-Desktop {
+  max-width: $max-container-desktop;
+  width: $container-desktop;
+  position: relative;
+  margin: 0 auto;
+}
+
 @mixin tablet {
   @media screen and (min-width: $break-view-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $break-view-desktop) {
     @content;
   }
 }

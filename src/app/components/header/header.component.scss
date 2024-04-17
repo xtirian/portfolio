@@ -1,5 +1,5 @@
-@use '../../../assets/sass/mixin' as mix;
-@use '../../../assets/sass/var' as *;
+@use "../../../assets/sass/mixin" as mix;
+@use "../../../assets/sass/var" as *;
 
 .header-container {
   @include mix.Container-Mobile;
@@ -41,12 +41,33 @@
   }
 }
 
-@include mix.tablet{
+@include mix.tablet {
   .header-container {
     @include mix.Container-Tablet;
     flex-direction: row;
 
     justify-content: space-between;
     margin-top: 30px;
+  }
+}
+
+@include mix.desktop {
+  .header-container {
+    @include mix.Container-Desktop;
+    justify-content: space-between;
+    margin-top: 39px;
+
+    span {
+      font-size: 32px;
+      line-height: 32px;
+      letter-spacing: -0.44px;
+    }
+
+    nav {
+      column-gap: 32px;
+      a {
+        font-size: 24px;
+      }
+    }
   }
 }
