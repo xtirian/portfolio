@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 import { IProjectProps } from '../../../assets/libs/models/IProject.model';
 import { ButtonComponent } from '../button/button.component';
 
@@ -18,7 +18,21 @@ export class CardComponent {
     link: '',
     github: '',
   };
-
   ViewProjectLabel = 'View Project';
+  isHovered: boolean = false;
+
+  constructor() {}
+
+  ngAfterViewInit() {
+    this.isHovered = false;
+  }
+
+  onMouseEnter() {
+    this.isHovered = true;
+  }
+
+  onMouseLeave() {
+    this.isHovered = false;
+  }
 }
 

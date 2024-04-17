@@ -1,5 +1,6 @@
-<div class="project-card">
+<div class="project-card" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
   <img [src]="project.image" alt="project-card" class="project-card-image">
+  <img [src]="project.image" alt="project-card" class="cover-image" [style.display]="isHovered ? 'none' : 'block'">
   <div class="project-card-content">
     <h4>{{project.title}}</h4>
     <div class="project-tag_container">
@@ -14,4 +15,3 @@
   </footer>
 
 </div>
- 

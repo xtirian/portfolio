@@ -11,7 +11,6 @@
   align-items: center;
 
   h3 {
-    // HeadingM
     font-size: 40px;
     line-height: 40px;
     font-weight: 700;
@@ -25,18 +24,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(343px, 345px));
   place-content: center;
-  /*
-  DESKTOP: 544
-  */
+
   gap: 0;
-  /*
-  DESKTOP: 30
-  */
 
   row-gap: 40px;
-  /*
-  DESKTOP: 69 ~nice
-  */
+
 
 }
 
@@ -44,11 +36,39 @@
   .project-container {
     @include mix.Container-Tablet;
   }
+  .header-project {
+h3 {
+      font-size: 72px;
+      line-height: 72px;
+      letter-spacing: -2.05px;
+    }
+  }
   .main-project {
     grid-template-columns: repeat(auto-fill, 345px);
     gap: 20px;
     row-gap: 60px;
     margin-top: 60px;
     margin-bottom: 100px;
+  }
+}
+
+@include mix.desktop{
+  .project-container {
+    @include mix.Container-Desktop;
+  }
+
+  .header-project {
+
+    h3 {
+      @include mix.HeadingXL
+    }
+  }
+
+  .main-project {
+    grid-template-columns: repeat(auto-fill, 540px);
+    gap: 20px;
+    row-gap: 69px;
+    margin-top: 80px;
+    margin-bottom: 139px;
   }
 }

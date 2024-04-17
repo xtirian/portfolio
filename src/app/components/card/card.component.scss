@@ -1,14 +1,15 @@
 @use "../../../assets/sass/var" as *;
 @use "../../../assets/sass/mixin" as mix;
 
+%projectCardSample{
+  width: 100%;
+  height: 63.5678392%;
+  object-fit: cover;
+}
+
 .project-card {
   width: 100%;
   height: 398px;
-  /*
-  MOBILE: 398
-  TABLET: 398
-  DESKTOP: 487
-  */
 
   display: flex;
   flex-direction: column;
@@ -19,19 +20,17 @@
 }
 
 .project-card-image {
-  width: 100%;
-  height: 63.5678392%;
-  // DESKTOP: 82.1355236%
-  object-fit: cover;
+  @extend %projectCardSample;
 }
-
+.cover-image {
+  display: none;
+}
 .project-card-content {
   display: flex;
   flex-direction: column;
   row-gap: 0px;
 
   h4 {
-    // HEADING M
     @include mix.HeadingM;
   }
 
@@ -50,4 +49,44 @@
 .project-card_footer {
   display: flex;
   gap: 32px;
+}
+
+@include mix.desktop {
+  %projectCardSampleDesktop{
+    width: 100%;
+    height: 82.1355236%;
+    object-fit: cover;
+  }
+
+  .project-card {
+    height: 487px;
+    position: relative;
+  }
+
+  .project-card-image {
+    position: relative;
+    opacity: 10%;
+    @extend %projectCardSampleDesktop;
+  }
+
+  .project-card_footer {
+    text-align: center;
+
+    flex-direction: column;
+    row-gap: 48px;
+
+    position: absolute;
+    z-index: 1;
+    top: 41.0677618%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .cover-image {
+    @extend %projectCardSampleDesktop;
+    display: block;
+    position: absolute;
+    opacity: 100%;
+    z-index: 2;
+  }
 }
