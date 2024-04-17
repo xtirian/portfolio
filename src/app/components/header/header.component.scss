@@ -40,3 +40,13 @@
     }
   }
 }
+
+@include mix.tablet{
+  .header-container {
+    @include mix.Container-Tablet;
+    flex-direction: row;
+
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+}

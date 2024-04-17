@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ButtonComponent } from '../button/button.component';
 import { ScreenSizeService } from '../../services/screenSize/screen-size.service';
@@ -15,12 +15,16 @@ export class HeroBannerComponent {
   pattern1Src = 'assets/images/bg/pattern-circle.svg';
   pattern2Src = 'assets/images/bg/pattern-rings.svg';
 
-
-  buttonText = "Contact Me";
+  buttonText = 'Contact Me';
   buttonLink = null;
 
+  @HostListener('window:resize', ['$event'])
+  OnResize() {
+    this.updateHeroBannerSrc();
+  }
+
   constructor(private screenSizeService: ScreenSizeService) {
-    this.updateHeroBannerSrc()
+    this.updateHeroBannerSrc();
   }
 
   updateHeroBannerSrc(): void {

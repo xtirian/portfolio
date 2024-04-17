@@ -15,6 +15,7 @@
   .heroBanner-content {
     text-align: center;
     margin-top: 40px;
+    max-width: 445px;
 
     .heroBanner-title {
       font-size: 40px;
@@ -23,6 +24,10 @@
       color: $white;
       span {
         text-decoration: underline $green 4px solid;
+      }
+
+      .break2{
+        display: none;
       }
     }
 
@@ -57,4 +62,66 @@
   top: 32px;
   left: -358px;
   z-index: -1;
+}
+
+@include mix.tablet {
+  .heroBanner-section {
+    .heroBanner-container {
+      @include mix.Container-Tablet;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-end;
+      position: relative;
+
+      margin-top: 0;
+      height:449px
+
+    }
+
+    .hero_image {
+      order: 2;
+      position:absolute;
+      top: -151px;
+      right: -70px;
+      z-index: -1;
+    }
+    .heroBanner-content {
+      order: 1;
+
+    margin-top: 0;
+      text-align: left;
+
+      .heroBanner-title {
+        font-size: 72px;
+        line-height: 72px;
+
+        .break1 {
+          display: none;
+        }
+
+        .break2{
+          display: block;
+        }
+
+      }
+    }
+  }
+
+  .heroBanner-pattern1 {
+    width: 129px;
+    height: 129px;
+    top: auto;
+    left: auto;
+    bottom: 0;
+    right: -90.5px;
+  }
+
+  .heroBanner-pattern2 {
+    width: 530px;
+    height: 129px;
+
+    top: 25px;
+    left: -358px;
+    z-index: -1;
+  }
 }
