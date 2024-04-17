@@ -23,24 +23,30 @@
   margin-top: 40px;
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(343px, 345px));
+  place-content: center;
   /*
-  MOBILE: 343
-  TABLET: 345
   DESKTOP: 544
   */
   gap: 0;
   /*
-  MOBILE: 0
-  TABLET: 22
   DESKTOP: 30
   */
 
   row-gap: 40px;
   /*
-  MOBILE: 40
-  TABLET: 60
   DESKTOP: 69 ~nice
   */
 
+}
+
+@include mix.tablet{
+  .project-container {
+    @include mix.Container-Tablet;
+  }
+  .main-project {
+    grid-template-columns: repeat(auto-fill, 345px);
+    gap: 20px;
+    row-gap: 60px;
+  }
 }
