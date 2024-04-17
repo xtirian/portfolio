@@ -92,7 +92,14 @@
 
 @include mix.tablet {
   .contact-form {
-    max-width: 445px;
+    width: 445px;
     margin: 0 auto;
+  }
+}
+
+@include mix.desktop {
+  .contact-form {
+
+    padding: 0 ;
   }
 }

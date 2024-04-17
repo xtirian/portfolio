@@ -9,6 +9,8 @@
   @include mix.Container-Mobile;
   margin-top: 80px;
   padding: 60px 0;
+  padding-bottom: 0;
+
 
   h3 {
     color: $white;
@@ -36,26 +38,69 @@
   // compensate for the padding of the header component
 }
 
-.pattern-footer{
+.pattern-footer {
   display: none;
 }
 
 @include mix.tablet {
-  .main-footer-container{
+  .main-footer-container {
     @include mix.Container-Tablet;
     position: relative;
   }
-  .main-footer-content{
-    max-width: 445px;
+
+  h3 {
+    color: $white;
+
+    // HEADINGM
+    font-size: 72px;
+    line-height: 72px;
+    font-weight: 700;
+    text-align: center;
+
+    letter-spacing: -2.05px;
+  }
+  p {
+    @include mix.Body;
+    font-weight: 500;
+  }
+
+  .main-footer-content {
+    width: 445px;
     margin: 0 auto;
   }
 
-  .pattern-footer{
+  .pattern-footer {
     width: 530px;
     height: 129px;
     position: absolute;
     display: block;
     bottom: 169px;
     left: -398px;
+  }
+}
+
+@include mix.desktop {
+  .main-footer-container {
+    @include mix.Container-Desktop;
+    padding-top: 84px;
+    padding-bottom: 0;
+
+    .main-footer-wraper {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 92px;
+    }
+
+    .main-footer-content {
+      margin: 0;
+      h3 {
+        @include mix.HeadingXL;
+        text-align: left;
+      }
+      p {
+        margin-top: 36px;
+        text-align: left;
+      }
+    }
   }
 }
