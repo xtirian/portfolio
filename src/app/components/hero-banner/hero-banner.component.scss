@@ -131,3 +131,42 @@
     z-index: -1;
   }
 }
+
+
+@include mix.desktop {
+  .heroBanner-section {
+    .heroBanner-container{
+      @include mix.Container-Desktop;
+      align-items: stretch;
+      margin-top: 127px;
+      height:407px;
+
+      .hero_image {
+        order: 2;
+        position:absolute;
+        top: -197.5px;
+        right: -70px;
+        z-index: -1;
+      }
+      .heroBanner-content {
+        max-width: 706px;
+
+        .heroBanner-title{
+          @include mix.HeadingXL;
+          br {
+            display: none
+          }
+        }
+
+      }
+
+      .heroBanner-pattern1 {
+        top: auto;
+        left: auto;
+        bottom: 0;
+        left: 60%;
+      }
+
+    }
+  }
+}
