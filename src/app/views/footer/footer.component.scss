@@ -36,12 +36,26 @@
   // compensate for the padding of the header component
 }
 
+.pattern-footer{
+  display: none;
+}
+
 @include mix.tablet {
   .main-footer-container{
     @include mix.Container-Tablet;
+    position: relative;
   }
   .main-footer-content{
     max-width: 445px;
     margin: 0 auto;
+  }
+
+  .pattern-footer{
+    width: 530px;
+    height: 129px;
+    position: absolute;
+    display: block;
+    bottom: 169px;
+    left: -398px;
   }
 }
