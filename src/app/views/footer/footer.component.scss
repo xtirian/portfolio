@@ -35,3 +35,13 @@
   padding-top: 20px;
   // compensate for the padding of the header component
 }
+
+@include mix.tablet {
+  .main-footer-container{
+    @include mix.Container-Tablet;
+  }
+  .main-footer-content{
+    max-width: 445px;
+    margin: 0 auto;
+  }
+}

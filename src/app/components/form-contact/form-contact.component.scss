@@ -1,4 +1,5 @@
 @use "../../../assets//sass/var" as *;
+@use "../../../assets//sass/mixin" as mix;
 
 .contact-form {
   padding: 50px 0 87px 0;
@@ -86,4 +87,12 @@
   background-color: $green;
   color: $white;
 
+}
+
+
+@include mix.tablet {
+  .contact-form {
+    max-width: 445px;
+    margin: 0 auto;
+  }
 }
