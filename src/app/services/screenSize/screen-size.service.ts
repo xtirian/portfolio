@@ -28,14 +28,14 @@ export class ScreenSizeService {
       (width >= 600 &&
         width <= 839.98 &&
         window.matchMedia('(orientation: portrait)').matches) ||
-      (width >= 1280 && width <= 1400 && window.matchMedia('(orientation: landscape)').matches)
+      (width >= 840 && width <= 1400)
     ) {
       this.isMobile = false;
 
       this.isTablet = true;
 
       this.isDesktop = false;
-    } else {
+    } else if( width >= 1400) {
       this.isMobile = false;
 
       this.isTablet = false;
