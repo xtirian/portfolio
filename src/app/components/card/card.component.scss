@@ -22,8 +22,9 @@
 .project-card-image {
   @extend %projectCardSample;
 }
-.cover-image {
-  display: none;
+img.cover-image {
+  width: 0;
+  height: 0
 }
 .project-card-content {
   display: flex;
